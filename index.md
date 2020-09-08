@@ -1,8 +1,8 @@
-## Welcome to GitHub Pages
+## Welcome to My Homepage
 
-You can use the [editor on GitHub](https://github.com/pratham16cse/pratham.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+I am a forth year Ph.D. student in [CSE, IIT Bombay](https://www.cse.iitb.ac.in/), working with [Prof. Sunita Sarawagi](https://www.cse.iitb.ac.in/~sunita/).
+Prior to joining IITB, I was M.S. scholar in the [CSE, IIT Madras](https://www.cse.iitm.ac.in/).  For my M.S. thesis, I have worked with [Prof. B. Ravindran](https://www.cse.iitm.ac.in/~ravi/) in the area of Social Network Analysis, on the problem of community detection in large networks.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
 
