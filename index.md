@@ -9,7 +9,7 @@ Prior to joining IITB, I was M.S. scholar in the [CSE, IIT Madras](https://www.c
 - Streaming Adaptation of Deep Forecasting Models using Adaptive Recurrent Units<br>
   Prathamesh Deshpande, Sunita Sarawagi<br>
   KDD 2019<br>
-  [Paper](https://dl.acm.org/doi/10.1145/3292500.3330996), [Code](https://github.com/pratham16/ARU), [Poster](https://drive.google.com/file/d/1UKTpKDWdWi-551g6sDRTFA7pXcwHPeYe/view).
+  \[[Paper](https://dl.acm.org/doi/10.1145/3292500.3330996)\], \[[Code](https://github.com/pratham16/ARU)\], \[[Poster](https://drive.google.com/file/d/1UKTpKDWdWi-551g6sDRTFA7pXcwHPeYe/view)\].
   
   
   
