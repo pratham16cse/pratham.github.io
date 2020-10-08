@@ -16,7 +16,7 @@ Prior to joining IITB, I was M.S. scholar in the [CSE, IIT Madras](https://www.c
 - M.S. by Research in Computer Science and Engineering, IIT Madras (2017)
 - B.Tech. in Information Technology, Walchand College of Engineering, Sangli (2013)
   
-## Resume
+## CV
 
 [CV](https://drive.google.com/file/d/11vjgGq6zJvBjH0IYjak86-N2kCFatYAk/view?usp=sharing)
   
