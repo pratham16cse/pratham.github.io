@@ -18,7 +18,7 @@ Prior to joining IITB, I was M.S. scholar in the [CSE, IIT Madras](https://www.c
   
 ## Resume
 
-[Resume](https://drive.google.com/open?id=10JGjobfVOTYr80E1hnXAJET_R_2GSYm0)
+[CV](https://drive.google.com/file/d/11vjgGq6zJvBjH0IYjak86-N2kCFatYAk/view?usp=sharing)
   
 ### Links
 
