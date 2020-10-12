@@ -1,6 +1,6 @@
 ## About Me
 
-I am a forth year Ph.D. student in [CSE, IIT Bombay](https://www.cse.iitb.ac.in/), working with [Prof. Sunita Sarawagi](https://www.cse.iitb.ac.in/~sunita/). I work on the problem of Forecasting in Time-series and Point Processes. I am also exploring the problem of answering various queries in the forecast range of a sequence.
+I am a Ph.D. student in [CSE, IIT Bombay](https://www.cse.iitb.ac.in/), working with [Prof. Sunita Sarawagi](https://www.cse.iitb.ac.in/~sunita/). I work on the problem of Forecasting in Time-series and Point Processes. I am also exploring the problem of answering various queries in the forecast range of a sequence.
 
 I have also worked on Local Adaptation Models in Time-series Forecasting. Visit our work on [Adaptive Recurrent Units (ARU)](https://dl.acm.org/doi/10.1145/3292500.3330996) ([arxiv link](https://arxiv.org/abs/1906.09926)) to know more.
 
