@@ -11,7 +11,7 @@ I have worked on Local Adaptation Models in Time-series Forecasting. Visit our w
 - Long Horizon Forecasting With Temporal Point Processes<br>
   Prathamesh Deshpande, Kamlesh Marathe, Abir De, Sunita Sarawagi<br>
   WSDM 2021 (Acceptance Rate 18.6 %)<br>
-  \[[Paper](https://arxiv.org/pdf/2101.02815v1.pdf)\].
+  \[[Paper](https://arxiv.org/pdf/2101.02815v1.pdf)\], \[[Code](https://github.com/pratham16cse/DualTPP)\].
 
 - Streaming Adaptation of Deep Forecasting Models using Adaptive Recurrent Units<br>
   Prathamesh Deshpande, Sunita Sarawagi<br>
