@@ -8,6 +8,11 @@ I have worked on Local Adaptation Models in Time-series Forecasting. Visit our w
 
 ## Publications
 
+- Missing Value Imputation on Multidimensional Time Series<br>
+  Parikshit Bansal, Prathamesh Deshpande, Sunita Sarawagi<br>
+  VLDB 2021 (To Appear) <br>
+  \[[Paper](https://arxiv.org/pdf/2103.01600.pdf)\].
+
 - Long Horizon Forecasting With Temporal Point Processes<br>
   Prathamesh Deshpande, Kamlesh Marathe, Abir De, Sunita Sarawagi<br>
   WSDM 2021 (Acceptance Rate 18.6 %)<br>
@@ -30,7 +35,7 @@ I have worked on Local Adaptation Models in Time-series Forecasting. Visit our w
 
 ## Professional Activities
 
-- Reviewer: ICML 2020
+- Reviewer: ICML 2020, NeurIPS 2021, ICLR 2022
 
 ## Teaching Assistant
 
