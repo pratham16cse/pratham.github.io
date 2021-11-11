@@ -14,5 +14,6 @@ include:
   - PULL_REQUEST_TEMPLATE.md
 
 title: Prathamesh Deshpande
+description: Phd Student, Department of CSE, IIT Bombay
 
 theme: jekyll-theme-minimal
