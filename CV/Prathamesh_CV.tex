@@ -1,0 +1,613 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% Simple LaTeX CV Template %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NOTE: If you find that it says                                     %%
+%%                                                                    %%
+%%                           1 of ??                                  %%
+%%                                                                    %%
+%% at the bottom of your first page, this means that the AUX file     %%
+%% was not available when you ran LaTeX on this source. Simply RERUN  %%
+%% LaTeX to get the ``??'' replaced with the number of the last page  %%
+%% of the document. The AUX file will be generated on the first run   %%
+%% of LaTeX and used on the second run to fill in all of the          %%
+%% references.                                                        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Don't like 10pt? Try 11pt or 12pt
+\documentclass[10pt]{article}
+
+% The automated optical recognition software used to digitize resume
+% information works best with fonts that do not have serifs. This
+% command uses a sans serif font throughout. Uncomment both lines (or at
+% least the second) to restore a Roman font (i.e., a font with serifs).
+%\usepackage{times}
+%\renewcommand{\familydefault}{\sfdefault}
+
+% This is a helpful package that puts math inside length specifications
+\usepackage{calc}
+\usepackage{comment}
+\usepackage{fixltx2e}
+
+% Simpler bibsection for CV sections
+% (thanks to natbib for inspiration)
+\makeatletter
+\newlength{\bibhang}
+\setlength{\bibhang}{1em} %1em}
+\newlength{\bibsep}
+ {\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
+\newenvironment{bibsection}%
+        {\begin{enumerate}{}{%
+%        {\begin{list}{}{%
+       \setlength{\leftmargin}{\bibhang}%
+       \setlength{\itemindent}{-\leftmargin}%
+       \setlength{\itemsep}{\bibsep}%
+       \setlength{\parsep}{\z@}%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{enumerate}\vspace{-.6\baselineskip}}
+%        {\end{list}\vspace{-.6\baselineskip}}
+\makeatother
+
+% Layout: Puts the section titles on left side of page
+\reversemarginpar
+
+%
+%         PAPER SIZE, PAGE NUMBER, AND DOCUMENT LAYOUT NOTES:
+%
+% The next \usepackage line changes the layout for CV style section
+% headings as marginal notes. It also sets up the paper size as either
+% letter or A4. By default, letter was used. If A4 paper is desired,
+% comment out the letterpaper lines and uncomment the a4paper lines.
+%
+% As you can see, the margin widths and section title widths can be
+% easily adjusted.
+%
+% ALSO: Notice that the includefoot option can be commented OUT in order
+% to put the PAGE NUMBER *IN* the bottom margin. This will make the
+% effective text area larger.
+%
+% IF YOU WISH TO REMOVE THE ``of LASTPAGE'' next to each page number,
+% see the note about the +LP and -LP lines below. Comment out the +LP
+% and uncomment the -LP.
+%
+% IF YOU WISH TO REMOVE PAGE NUMBERS, be sure that the includefoot line
+% is uncommented and ALSO uncomment the \pagestyle{empty} a few lines
+% below.
+%
+
+%% Use these lines for letter-sized paper
+\usepackage{multicol}
+%\usepackage[paper=letterpaper,
+%           %includefoot, % Uncomment to put page number above margin
+%            marginparwidth=1.2in,     % Length of section titles
+%            marginparsep=.05in,       % Space between titles and text
+%            margin=1in,               % 1 inch margins
+ %           includemp]{geometry}
+
+%% Use these lines for A4-sized paper
+\usepackage[paper=a4paper,
+            includefoot, % Uncomment to put page number above margin
+            marginparwidth=30.5mm,    % Length of section titles
+            marginparsep=1.1mm,       % Space between titles and text
+            margin=20mm,              % 25mm margins
+            includemp]{geometry}
+
+%% More layout: Get rid of indenting throughout entire document
+\setlength{\parindent}{0in}
+
+\usepackage[shortlabels]{enumitem}
+
+%% Reference the last page in the page number
+%
+% NOTE: comment the +LP line and uncomment the -LP line to have page
+%       numbers without the ``of ##'' last page reference)
+%
+% NOTE: uncomment the \pagestyle{empty} line to get rid of all page
+%       numbers (make sure includefoot is commented out above)
+%
+\usepackage{fancyhdr,lastpage}
+%\pagestyle{fancy}
+\pagestyle{empty}      % Uncomment this to get rid of page numbers
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill %
+                    \arabic{page} of \protect\pageref*{LastPage} % +LP
+%                    \arabic{page}                               % -LP
+                    \hfill \,}}
+
+% Finally, give us PDF bookmarks
+\usepackage{color,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The title (name) with a horizontal rule under it
+% (optional argument typesets an object right-justified across from name
+%  as well)
+%
+% Usage: \makeheading{name}
+%        OR
+%        \makeheading[right_object]{name}
+%
+% Place at top of document. It should be the first thing.
+% If ``right_object'' is provided in the square-braced optional
+% argument, it will be right justified on the same line as ``name'' at
+% the top of the CV. For example:
+%
+%       \makeheading[\emph{Curriculum vitae}]{Your Name}
+%
+% will put an emphasized ``Curriculum vitae'' at the top of the document
+% as a title. Likewise, a picture could be included:
+%
+%   \makeheading[\includegraphics[height=1.5in]{my_picutre}]{Your Name}
+%
+% the picture will be flush right across from the name.
+\newcommand{\makeheading}[2][]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+             {\large \bfseries #2 \hfill #1}\\[-0.15\baselineskip]%
+                 \rule{\columnwidth}{1pt}%
+         \end{minipage}}
+
+% The section headings
+%
+% Usage: \section{section name}
+\renewcommand{\section}[1]{\pagebreak[3]%
+    \hyphenpenalty=10000%
+    \vspace{1.3\baselineskip}%
+    \phantomsection\addcontentsline{toc}{section}{#1}%
+    \noindent\llap{\scshape\smash{\parbox[t]{\marginparwidth}{\raggedright #1}}}%
+    \vspace{-\baselineskip}\par}
+
+% An itemize-style list with lots of space between items
+\newenvironment{outerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1,leftmargin=*]}{\end{itemize}%
+         \vspace{-.6\baselineskip}}
+
+% An environment IDENTICAL to outerlist that has better pre-list spacing
+% when used as the first thing in a \section
+\newenvironment{lonelist}[1][\enskip\textbullet]%
+        {\begin{list}{#1}{%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{list}\vspace{-.6\baselineskip}}
+
+% An itemize-style list with little space between items
+\newenvironment{innerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt]}
+        {\end{itemize}}
+
+% An environment IDENTICAL to innerlist that has better pre-list spacing
+% when used as the first thing in a \section
+\newenvironment{loneinnerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt]}
+        {\end{itemize}\vspace{-.6\baselineskip}}
+
+% To add some paragraph space between lines.
+% This also tells LaTeX to preferably break a page on one of these gaps
+% if there is a needed pagebreak nearby.
+\newcommand{\blankline}{\quad\pagebreak[3]}
+\newcommand{\halfblankline}{\quad\vspace{-0.5\baselineskip}\pagebreak[3]}
+
+% Uses hyperref to link DOI
+\newcommand\doilink[1]{\href{http://dx.doi.org/#1}{#1}}
+\newcommand\doi[1]{doi:\doilink{#1}}
+
+% For \url{SOME_URL}, links SOME_URL to the url SOME_URL
+\providecommand*\url[1]{\href{#1}{#1}}
+% Same as above, but pretty-prints SOME_URL in teletype fixed-width font
+\renewcommand*\url[1]{\href{#1}{\texttt{#1}}}
+
+%
+\newcommand\tttlink[2]{\href{#1}{\texttt{[#2]}}}
+
+% For \email{ADDRESS}, links ADDRESS to the url mailto:ADDRESS
+\providecommand*\email[1]{\href{mailto:#1}{#1}}
+% Same as above, but pretty-prints ADDRESS in teletype fixed-width font
+%\renewcommand*\email[1]{\href{mailto:#1}{\texttt{#1}}}
+
+%\providecommand\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+%\providecommand\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%    \TeX}}
+\providecommand\BibTeX{{B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    \TeX}}
+\providecommand\Matlab{\textsc{Matlab}}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\makeheading{Prathamesh Deshpande}
+
+\section{Contact Information}
+
+% NOTE: Mind where the & separators and \\ breaks are in the following
+%       table.
+%
+% ALSO: \rcollength is the width of the right column of the table
+%       (adjust it to your liking; default is 1.85in).
+%
+\newlength{\rcollength}\setlength{\rcollength}{1.4in}%
+%
+%\begin{tabular}[t]{@{}p{\textwidth-\rcollength}p{\rcollength}}
+%%\href{http://www.cse.osu.edu/}%
+%%     {Department of Computer Science and Engineering} & \\
+%%\href{http://www.osu.edu/}{The Ohio State University}
+%510, Tamiraparni hostel & +91-7338918056 \\
+%IIT Madras, Chennai 600 036 & \email{prathameshsdeshpande@gmail.com}\\
+%\end{tabular}
+%B-513, Hostel 16 \hfill{+91-9043751980} \\
+C-330, Hostel 14, \hfill{+91-9043751980} \\
+IIT Bombay, Powai, Mumbai - 400 076  \hfill{\email{prathameshsdeshpande@gmail.com}}
+
+%\section{Objective}
+%Insert text here if you want to
+%\begin{innerlist}
+%\item More information and auxiliary documents can be found at\\\url{http://www.tedpavlic.com/facjobsearch/}
+%\end{innerlist}
+\section{Research Interests}
+
+%Social Network Analysis, Data Mining, Machine Learning
+%\begin{outerlist}
+%	\item Machine Learning
+%	\item Data Mining
+%	\item Social Network Analysis
+%\end{outerlist}
+%Machine Learning, Data Mining, Social Network Analysis
+%Machine Learning, Deep Learning, Timeseries forecasting, Neural models for Spatio-temporal Forecasting
+%Deep learning based methods on Time-series forecasting and Point process prediction, Graph based algorithms in Forecasting.
+Forecasting in temporal data (Time-series and point processes) \\ 
+Time-series modelling (predictive analytics, missing value imputation)
+
+\section{Education}
+\textbf{Ph.D., Computer Science and Engineering} \hfill{Jul 2017 to Present}
+\begin{outerlist}
+\item[] Indian Institute of Technology Bombay, Mumbai.
+        \begin{innerlist}
+%        \item Thesis Topic: \emph{Local Adaptation Models for Timeseries Forecasting in Deep Models (tentative)}
+        \item Advisor:
+        		{Prof. Sunita Sarawagi}
+        \end{innerlist}
+\end{outerlist}
+\vspace{.1in}
+\textbf{M.S. by Research, Computer Science and Engineering} \hfill{Jan 2014 to Jul 2017}
+\begin{outerlist}
+\item[] Indian Institute of Technology Madras, Chennai.
+        \begin{innerlist}
+        \item Thesis Topic: \emph{A Study of Community Detection Algorithms in Large Networks}
+        \item Advisor:
+                   {Prof. B. Ravindran}
+        \end{innerlist}
+\end{outerlist}
+\vspace{.1in}
+{\textbf{B.Tech., Information Technology }}\hfill{Jul 2009 to Jun 2013}
+\begin{outerlist}
+\item[] Walchand College of Engineering, Sangli, Maharashtra.
+\end{outerlist}
+
+\section{Publications}
+\begin{itemize}
+	
+	\item Long Range Probabilistic Forecasting in Time-Series using High Order Statistics \\
+	\textit{Under Review}. \\ %(AR 18.6 \%) \\
+	Prathamesh Deshapnde and Sunita Sarawagi \\
+	\tttlink{https://arxiv.org/pdf/2111.03394.pdf}{Arxiv}, \tttlink{https://github.com/pratham16cse/AggForecaster}{Code}
+
+	\item Missing Value Imputation on Multidimensional Time Series \\
+	In \textit{VLDB 2021}. \\ %(AR 18.6 \%) \\
+	Parikshit Bansal, Prathamesh Deshapnde, Sunita Sarawagi \\
+	\tttlink{https://arxiv.org/abs/2103.01600}{Arxiv}, %\tttlink{https://github.com/pratham16cse/DualTPP}{Code}
+
+	\item Long Horizon Forecasting With Temporal Point Processes \\
+	In \textit{WSDM 2021}. (AR 18.6 \%) \\
+	Prathamesh Deshapnde, Kamlesh Marathe, Abir De, Sunita Sarawagi \\
+	\tttlink{https://arxiv.org/abs/2101.02815}{Paper}, \tttlink{https://github.com/pratham16cse/DualTPP}{Code}
+
+	\item Streaming Adaptation of Deep Forecasting Models using Adaptive Recurrent Units \\
+	In \textit{ACM SIGKDD 2019}, August 4--8, 2019, Anchorage, AK, USA. (AR 14.2\%) \\ 
+	Prathamesh Deshpande and Sunita Sarawagi \\
+	\tttlink{https://dl.acm.org/citation.cfm?id=3292500.3330996}{Paper}, \tttlink{https://github.com/pratham16cse/ARU}{Code}
+
+	\item MCEIL: An Improved Scoring Function for Overlapping Community Detection using Seed Expansion Methods \\
+	%In \textit{The 7th Workshop on Social Network Analysis in Applications, The 2017 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining}, ASONAM 2017, Sydney, Australia \\
+	In \textit{The 7th Workshop on Social Network Analysis in Applications, ASONAM 2017}, Sydney, Australia \\
+	Prathamesh Deshpande and B. Ravindran \\ 
+	\tttlink{https://dl.acm.org/citation.cfm?doid=3110025.3116193}{Paper}
+\end{itemize}
+%\end{outerlist}
+%\end{bibsection}
+
+% Add a little space to nudge next ``Conference Publications'' marginpar
+% down to make room for tall ``Submitted Journal Publications''
+% marginpar. If there are enough submitted journal publications, this
+% space will not be needed (and should be removed).
+%\vspace{0.1in}
+
+\section{Honors and Awards}
+%Travel Awards
+\begin{innerlist}
+	%\begin{itemize}
+	\item SIGIR Travel Grant to attend WSDM 2021, Virtual Event.
+	\item Google Travel Grant of USD2700 to attend KDD 2019, Anchorage, AK, USA.
+	\item Travel grant for attending ACM CoDS-COMAD 2018 conference, held in Goa, India.
+	\item 4\textsuperscript{th} rank in HiPC 2015 Student Parallel Programming challenge.
+	%\item GATE Score: 99.52 percentile (GATE 2013)
+	\item Secured All India Rank 389 in GATE 2013, with 99.83 percentile.
+	%\item Winner in `C-Programming(Programability 2012)' at WCE, Sangli.
+	%\item 4\textsuperscript{th} position - ``AI Wars(Programming Competition,Event - MindSpark 2011)'' at College of Engineering, Pune.
+	
+	%\end{itemize}
+\end{innerlist}
+
+\section{Professional Activities}
+\begin{innerlist}
+	\item Reviewer, AISTATS 2022
+	\item Reviewer, ICML 2020
+\end{innerlist}
+
+\section{Teaching Assistant}
+\begin{innerlist}
+	\item Artificial Intelligence and Machine Learning, Autumn 2021
+	\item Automatic Speech Recognition, Spring 2021
+	\item Foundations of Machine Learning, Autumn 2020
+	\item Advanced Machine Learning, Spring 2020
+	\item Web Mining I, Autumn 2019
+	\item Web Mining II, Spring 2019
+	\item Introduction to Machine Learning, Autumn 2018
+\end{innerlist}
+
+\section{Graduate Courses}
+%\begin{multicols}{2}
+\begin{multicols}{2}
+\begin{outerlist}
+	\item At IIT Bombay
+	\begin{innerlist}
+		\item Organization of Web Information
+		\item Advanced Machine Learning
+		\item Automatic Speech Recognition
+		\item Web Search and Mining
+		\item Foundations of Machine Learning
+	\end{innerlist}
+	\item At IIT Madras (selected courses)
+	\begin{innerlist}
+		\item Data Mining
+		\item Kernel Methods for Pattern Analysis
+		\item Foundations of Data Science
+		\item Indexing and Searching in Large Data-sets
+	\end{innerlist}
+\end{outerlist}
+\end{multicols}
+%\end{multicols}
+
+
+\halfblankline
+%\end{comment}
+
+\section{Projects}
+
+%Local Adaptation Models for Timeseries Forecasting in Deep Models \\
+%\emph{(Guide: Prof.\ Sunita Sarawagi)} \hfill{Jul 2018 to Feb 2019}
+%\vspace{0.1in}
+%\begin{innerlist}
+%	\item Proposed a light-weight, parameterless local adaptation model for timeseries forecasting.
+%	\item Predictions of a highly simplified local model combined with global model predictions significantly improve the performance on timeseries forecasting tasks.
+%	\item Published in ACM SIGKDD 2019, Anchorage, AK, USA.
+%\end{innerlist}
+%
+%\halfblankline
+%\vspace{0.1275in}
+
+Convolutional Neural Networks for Graph-Structured Data \\
+\emph{(Advanced Machine Learning, Guide: Prof.\ Sunita Sarawagi)} \hfill{Feb 2018 to Apr 2018}
+\vspace{0.1in}
+\begin{innerlist}
+	\item Comparison of various convolution approaches on Merck Molecular Activity Challenge dataset.
+	\item Explored various techniques to define the neighbourhood of a node for convolution on the graph-structure.
+\end{innerlist}
+
+\halfblankline
+\vspace{0.1275in}
+
+Emotion Recognition from Multi-modal Information \\
+\emph{(Automatic Speech Recognition, Guide: Dr.\ Preethi Jyothi)} \hfill{Aug 2017 to Nov 2017}
+\vspace{0.1in}
+\begin{innerlist}
+	\item Explored BLSTM-RNNs for the task of Emotion Recognition on RECOLA dataset.
+	\item There is a delay between emotion occurring and it being labeled.
+	\item We showed that simple BLSTM-RNN does not learn the delay automatically, and it needs to be explicitly handled.
+\end{innerlist}
+
+\halfblankline
+\vspace{0.1275in}
+
+A Study of Community Detection Algorithms in Large Networks \\
+\emph{(M.S. Thesis, Guide: Prof.\ B.\ Ravindran)} \hfill{Jan 2016 to Jun 2017}
+\vspace{0.1in}
+\begin{innerlist}
+	\item Proposed an improved scoring function to detect overlapping communities in large networks.
+	\item The proposed scoring function computes communities with higher mutual information and F\textsubscript{1} score than conductance on benchmark networks Amazon, DBLP and Youtube.
+	\item Published in SNAA Workshop, ASONAM-2017 conference.
+%	\item Objective: To detect overlapping communities in large complex networks.
+%	\item Description: We use Personalized PageRank (PPR) based approach for this task. Ranking of nodes by PPR guide towards community assignments.
+%	\item Challenges: Structural analysis alone is insufficient to recover ground-truth communities. Another challenge is scalability.
+\end{innerlist}
+
+\halfblankline
+\vspace{0.1275in}
+
+%Research projects
+%\begin{itemize}
+Singular Value Decomposition of Large Sparse Matrices \hfill{Apr 2015 to Dec 2015}
+\vspace{0.1in}
+\begin{innerlist}
+	\item Implementation of Incremental SVD algorithm in \emph{gensim}, a python library for text processing.
+	\item Input matrix is processed in streaming fashion. Input rows or columns can be processed as they arrive from source of the data. 
+	\item For sufficiently large matrices which can only be processed in streaming fashion, the accuracy of top $10$-$20\%$ singular values is unaffected.
+%	\item Objective: Compute $k$-SVD of large sparse matrices.
+%	\item Description: Created a set-up for computing $k$-SVD of large-sparse matrices in streaming and distributed fashion. Various approximate algorithms of SVD are incorporated in distributed setup to achieve speed up for large matrices.
+%	\item Challenges: Accuracy dependent on spectrum of singular values which is hard to identify at run-time. Also, we need only few top singular values. Existing algorithms still do redundant computation.
+\end{innerlist}
+
+\halfblankline
+\vspace{0.1275in}
+
+%Parallel clustering of high dimensional data set \hfill{Sep 2015 to Nov 2015}
+%\vspace{0.1in}
+%\begin{innerlist}
+%	\item This work is done as part of HiPC'15 Student Parallel Programming Challenge (team of 3) and secured fourth rank.
+%	\item We implemented parallel k-means algorithm on Intex Xeon Phi coprocessor using OpenMP.
+%	\item With $240$ logical cores, our implementation takes $4$ seconds to compute clusters in a data-set with $40$K points of $97$ dimensions.
+%%	\item Objective: Parallel clustering on Intel Xeon Phi coprocessor
+%%	\item Description: We designed CPU+MIC hybrid cluster computing technique using OpenMP+offload mode which can run on Intel Xeon Phi coprocessor. We used 240 logical cores and vector registers for parallelization and vectorization of the code. Using our parallel technique, we clustered the data set of 40K points having 97 dimensions, in just 4 seconds.
+%%	\item Challenges: Handling data dependencies in lloyd's iterations of k-means algorithm.
+%\end{innerlist}
+%
+%\halfblankline
+%\vspace{0.1275in}
+%
+Diversity aware reverse top-$k$ queries on graphs \\
+\emph{(Indexing and Searching in Large Data sets, Guide: Dr.\ Sayan Ranu)} \hfill{Aug to Nov 2014}
+\vspace{0.1in}
+\begin{innerlist}
+	\item A technique is proposed to introduce diversity in the result of a reverse top-$k$ query.
+	\item First, a reverse top-$k'$ set $S$ is extracted, where $k'>k$. Then, clustering is performed on $S$ to get diversified result.
+%\item Objective: To introduce diversity awareness in Reverse top-k queries
+%\item Description: We first overestimated the reverse top-k answer set. Then, we create an induced graph on it and find clusters in the induced graph to introduce diversity.
+%\item Challenges: Diversity aware search is a hard problem, and reverse top-k is computationally expensive.
+\end{innerlist}
+%
+%\halfblankline
+%\vspace{0.1275in}
+%
+%{Agent for playing \emph{Checkers} Game} \hfill{Nov 2011 to Dec 2011}
+%\vspace{0.1in}
+%\begin{innerlist}
+%	\item This work is done as part of MindSpark'11 AI Wars Challenge - A checkers competition among agents developed by participants.
+%	\item Various simple, defensive strategies were implemented. Agent can make quick decision based on the current situation. A good defense led attacking opponents destroying their pieces.
+%	\item Our agent secured fourth rank in the checkers tournament played by $30$ agents.
+%%	\item Objective: To an agent for playing checkers game.
+%%	\item Description: Various simple, defensive strategies are implemented. Can take decisions quickly, based on the current situation. A good defense led attacking opponents destroying themselves.
+%%	\item Challenges: Accurate prediction of results based on current state and move is hard.
+%\end{innerlist}
+%
+%
+%\end{enumerate}
+%\section{Course \\ Projects}
+%Incremental Singular Value Decomposition on Texts \\
+%\emph{(Data Mining, Guide: Dr.\ Sayan Ranu)} \hfill{Feb to Apr 2015}
+%\vspace{0.1in}
+%\begin{innerlist}
+%\item Study of various incremental and distributed algorithms to compute SVD of large matrices.
+%%\item Objective: Update SVD of large matrix based on insertions and deletions of rows/columns in the matrix
+%%\item Description: A QR-like decomposition is proposed and various optimizations are applied in order to achieve gain in performance, viz. Compromising accuracy of bottom singular values, finding approximate subspace.
+%%\item Challenges: Only linear time algorithms are acceptable. Sampling or randomization introduces error and deterministic algorithms are quite slow.
+%\end{innerlist}
+%
+%\halfblankline
+%\vspace{0.1275in}
+%
+%An approach to Speaker Recognition using SVD based Matrix Completion \\
+%\emph{(Pattern Recognition, Guide: Prof.\ Hema A. Murthy)} \hfill{Oct 2014 to Feb 2015}
+%\vspace{0.1in}
+%\begin{innerlist}
+%	\item A new approach to speaker recognition in the UBM-GMM framework is proposed.
+%	\item The proposed approach is based on low-rank decomposition UBM-GMM aligned data matrix.
+%	\item Simple distance functions, such as cosine, are used to identify a speaker.
+%%\item Objective: Speaker Recognition in small sub-space, using cosine similarity measure.
+%%\item Description: We propose a new approach to speaker recognition in the UBM-GMM framework. The proposed approach is based on low-rank decomposition UBM-GMM aligned data matrix. Simple distance functions, such as cosine, can be used to verify/identify a speaker.
+%%\item Challenges: Available data is huge and cannot be processed in batch mode. Incremental methods are required.
+%\end{innerlist}
+%
+%\halfblankline
+%\vspace{0.1275in}
+%
+%Spoken Digit Recognition Task with Parallel K-Means and Parallel DTW \\
+%\emph{(Concurrent Programming, Guide: Dr.\ Shankar Balachandran)}\hfill{Mar to May 2014}
+%\vspace{0.1in}
+%\begin{innerlist}
+%	\item For the implementation of parallel $k$-means and parallel DTW, Intel Cilk framework is used.
+%	\item Parallel $k$-means provides $3$x speed over serial version.
+%	\item Digit recognition is done using parallel DTW.
+%%\item Objectives: To identify spoken digits
+%%\item Description: We used DTW to perform classification. We used parallel k-means to find a training example which best represents a digit. Parallel DTW is also implemented to speedup the digit recognition task.
+%%\item Challenges: Introducing parallelism in k-means and DTW.
+%\end{innerlist}
+%
+%\halfblankline
+%\vspace{0.1275in}
+%
+\section{Software \\ Skills}
+%\begin{comment}
+\begin{innerlist}
+\item Python (PyTorch, TensorFlow, CVXPY)
+\item C, C$++$.
+\item Platform: Amazon Web Services (AWS).
+\item Tools: \LaTeX.
+\end{innerlist}
+
+\section{Professional Experience}
+Project Associate \hfill {Jan 2014 to Dec 2016}
+\begin{innerlist}
+	\item Indian Institute of Technology, Madras.
+\end{innerlist}
+Software Engineer \hfill {Oct 2013 to Dec 2013}
+\begin{innerlist}
+	\item Persistent Systems Ltd., Pune.
+\end{innerlist}
+
+
+\section{Positions \\ of \\ Responsibilities}
+   
+\halfblankline
+\begin{innerlist}
+	\item MS/PhD Placement Coordinator for Computer Science and Engg.\ at IIT Madras.
+	\item Technical Adviser for Students' Association of Information Technology in Walchand College of Engineering, Sangli.
+%	\begin{itemize}
+%		\item From June' 2010 to April' 2011 and 
+%		\item From June' 2012 to April' 2013
+%	\end{itemize}
+	\item Member of Walchand Linux Users' Group from June' 2011 to April' 2012, in Walchand College of Engineering, Sangli.
+\end{innerlist}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% End CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------%
+% The following is copyright and licensing information for
+% redistribution of this LaTeX source code; it also includes a liability
+% statement. If this source code is not being redistributed to others,
+% it may be omitted. It has no effect on the function of the above code.
+%----------------------------------------------------------------------%
+% Copyright (c) 2007, 2008, 2009, 2010, 2011 by Theodore P. Pavlic
+%
+% Unless otherwise expressly stated, this work is licensed under the
+% Creative Commons Attribution-Noncommercial 3.0 United States License. To
+% view a copy of this license, visit
+% http://creativecommons.org/licenses/by-nc/3.0/us/ or send a letter to
+% Creative Commons, 171 Second Street, Suite 300, San Francisco,
+% California, 94105, USA.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+% OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+% MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+% IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+% CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+% TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+% SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+%----------------------------------------------------------------------%
