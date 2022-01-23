@@ -1,5 +1,7 @@
 ## About Me
 
+[![Prathamesh's GitHub stats](https://github-readme-stats.vercel.app/api?username=pratham16cse)](https://github.com/pratham16cse)
+
 I am a Ph.D. student in [Department of CSE, IIT Bombay](https://www.cse.iitb.ac.in/), working with [Prof. Sunita Sarawagi](https://www.cse.iitb.ac.in/~sunita/). I work on the problem of Forecasting in Time-series and Point Processes. I am also exploring the problem of answering various queries in the forecast range of a sequence.
 
 Please check our recent work on [Forecasting with High Order Statistics](https://arxiv.org/pdf/2111.03394.pdf). In this work, we make a case that if an analyst is interested in aggregated values of forecasts, then directly forecasting the aggrgated values is more accurate than first forecasting and then aggregating the values.
@@ -60,6 +62,3 @@ Visit our [lab page](https://vihari.github.io/minimal/) to know more about the p
 - [Github](https://github.com/pratham16cse)
 - [Google Scholar](https://scholar.google.co.in/citations?user=_TgBTNwAAAAJ&hl=en)
 - [Twitter](https://twitter.com/pratham16181)
-
-
-[![Prathamesh's GitHub stats](https://github-readme-stats.vercel.app/api?username=pratham16cse)](https://github.com/pratham16cse)
