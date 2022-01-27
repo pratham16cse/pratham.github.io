@@ -1,2 +1,1 @@
-- Test1
-- Test2
+- While creating a dataloader, setting `num_workers=0` often works best in terms of running time. This is possibly because the overlead of creating workers being larger than processing data without creating workers.
