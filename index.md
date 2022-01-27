@@ -62,3 +62,8 @@ Visit our [lab page](https://vihari.github.io/minimal/) to know more about the p
 - [Github](https://github.com/pratham16cse)
 - [Google Scholar](https://scholar.google.co.in/citations?user=_TgBTNwAAAAJ&hl=en)
 - [Twitter](https://twitter.com/pratham16181)
+
+
+### Tips and Tricks for Time-series Modelling/Forecasting
+
+[Here](notes.md) are some notes on efficiently training deep time-series models.
