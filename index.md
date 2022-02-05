@@ -41,7 +41,7 @@ Visit our [lab page](https://vihari.github.io/minimal/) to know more about the p
   
 ## CV
 
-[CV](https://drive.google.com/file/d/11vjgGq6zJvBjH0IYjak86-N2kCFatYAk/view?usp=sharing)
+[CV](https://drive.google.com/file/d/1hakk61ia0Fu4fe7_KwZZuWF2BpCKe74r/view?usp=sharing)
 
 ## Professional Activities
 
