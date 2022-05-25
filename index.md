@@ -13,9 +13,9 @@ Visit our [lab page](https://vihari.github.io/minimal/) to know more about the p
 <!-- Prior to joining IITB, I was M.S. scholar in the [CSE, IIT Madras](https://www.cse.iitm.ac.in/).  For my M.S. thesis, I have worked with [Prof. B. Ravindran](https://www.cse.iitm.ac.in/~ravi/) in the area of Social Network Analysis, on the problem of community detection in large networks. -->
 
 ## Publications
-- Long Range Probabilistic Forecasting in Time-Series using High Order Statistics. \
+- Coherent Probabilistic Aggregate Queries on Long-horizon Forecasts. \
   Prathamesh Deshpande and Sunita Sarawagi. \
-  _Under Review_. \
+  IJCAI 2022 (To Appear). \
   \[[Paper](https://arxiv.org/pdf/2111.03394.pdf)\] \[[Code](https://github.com/pratham16cse/AggForecaster)\]
 
 - Missing Value Imputation on Multidimensional Time Series. \
