@@ -1,6 +1,6 @@
 ## About Me
 
-<!-- [![Prathamesh's GitHub stats](https://github-readme-stats.vercel.app/api?username=pratham16cse)](https://github.com/pratham16cse) -->
+[![Prathamesh's GitHub stats](https://github-readme-stats.vercel.app/api?username=pratham16cse)](https://github.com/pratham16cse)
 
 I am a Ph.D. student in [Department of CSE, IIT Bombay](https://www.cse.iitb.ac.in/), working with [Prof. Sunita Sarawagi](https://www.cse.iitb.ac.in/~sunita/). I work on the problem of Forecasting in Time-series and Point Processes. I am also exploring the problem of answering various queries in the forecast range of a sequence.
 
