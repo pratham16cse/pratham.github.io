@@ -16,7 +16,7 @@ Visit our [lab page](https://vihari.github.io/minimal/) to know more about the p
 - Coherent Probabilistic Aggregate Queries on Long-horizon Forecasts. \
   Prathamesh Deshpande and Sunita Sarawagi. \
   IJCAI 2022. \
-  \[[Paper](https://www.ijcai.org/proceedings/2022/0404.pdf)\] \[[Code](https://github.com/pratham16cse/AggForecaster)\]
+  \[[Paper](https://www.ijcai.org/proceedings/2022/0404.pdf)\] \[[Code](https://github.com/pratham16cse/AggForecaster)\] \[[Talk 📢](https://www.ijcai.org/proceedings/2022/video/404)\]
 
 - Missing Value Imputation on Multidimensional Time Series. \
   Parikshit Bansal, Prathamesh Deshpande, and Sunita Sarawagi. \
