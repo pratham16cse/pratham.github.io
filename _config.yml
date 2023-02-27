@@ -15,5 +15,6 @@ include:
 
 title: Prathamesh Deshpande
 description: Phd Student, Department of CSE, IIT Bombay
+show_navigation: true
 
 theme: jekyll-theme-minimal
