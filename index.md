@@ -45,7 +45,7 @@ Visit our [lab page](https://vihari.github.io/minimal/) to know more about the p
 
 ## Professional Activities
 
-- Reviewer: ICML 2020, NeurIPS 2021, ICLR 2022
+- Reviewer: ICML 2020, NeurIPS 2022, KDD 2023
 
 ## Teaching Assistant
 
