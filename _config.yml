@@ -14,7 +14,7 @@ include:
   - PULL_REQUEST_TEMPLATE.md
 
 title: Prathamesh Deshpande
-description: Applied Researcher, Fujitsu Research India
+description: 
 show_navigation: true
 
 theme: jekyll-theme-minimal
