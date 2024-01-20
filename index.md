@@ -1,9 +1,10 @@
 ## About Me
 
 <!--- [![Prathamesh's GitHub stats](https://github-readme-stats.vercel.app/api?username=pratham16cse)](https://github.com/pratham16cse) -->
-I am an Applied Researcher at [Fujitsu Research India](https://www.linkedin.com/company/fujitsuresearch/) working on problems in the Graph-AI domain. 
+<!--- I am an Applied Researcher at [Fujitsu Research India](https://www.linkedin.com/company/fujitsuresearch/) working on problems in the Graph-AI domain. -->
 
-Prior to joining Fujitsu, I completed my Ph.D. from [Department of CSE, IIT Bombay](https://www.cse.iitb.ac.in/). During Ph.D., I worked with [Prof. Sunita Sarawagi](https://www.cse.iitb.ac.in/~sunita/) on various problems in temporal modeling domain such as forecasting in time-series and point processes, missing value imputation, and anomaly detection. The details of our publications are given below. <!--- Forecasting in Time-series and Point Processes. --> <!--- I am also exploring the problem of answering various queries in the forecast range of a sequence. -->
+<!--- Prior to joining Fujitsu, -->
+I have obtained a Ph.D. from [Department of CSE, IIT Bombay](https://www.cse.iitb.ac.in/) where I worked with [Prof. Sunita Sarawagi](https://www.cse.iitb.ac.in/~sunita/) on various problems in temporal modeling domain such as forecasting in time-series and point processes, missing value imputation, and anomaly detection. The details of our publications are given below. <!--- Forecasting in Time-series and Point Processes. --> <!--- I am also exploring the problem of answering various queries in the forecast range of a sequence. -->
 
 <!--- Please check our recent work on [Forecasting with High Order Statistics](https://arxiv.org/pdf/2111.03394.pdf). In this work, we make a case that if an analyst is interested in aggregated values of forecasts, then directly forecasting the aggrgated values is more accurate than first forecasting and then aggregating the values.
 
@@ -11,7 +12,7 @@ I have worked on Local Adaptation Models in Time-series Forecasting. Visit our w
 
 Visit our [lab page](https://vihari.github.io/minimal/) to know more about the projects in our lab.
 -->
-<!-- Prior to joining IITB, I was M.S. scholar in the [CSE, IIT Madras](https://www.cse.iitm.ac.in/).  For my M.S. thesis, I have worked with [Prof. B. Ravindran](https://www.cse.iitm.ac.in/~ravi/) in the area of Social Network Analysis, on the problem of community detection in large networks. -->
+Prior to joining IITB, I was M.S. scholar in the [CSE, IIT Madras](https://www.cse.iitm.ac.in/).  For my M.S. thesis, I worked with [Prof. B. Ravindran](https://www.cse.iitm.ac.in/~ravi/) in the area of Social Network Analysis, on the problem of community detection in large networks.
 
 ## Ph. D. Thesis
 - Probabilistic Modeling of Temporal Sequences for Long-range Forecasting, Imputation, and Anomaly Detection. \
